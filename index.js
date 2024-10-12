@@ -21,27 +21,12 @@ const userSchema = new mongoose.Schema({
 //Mongoose MODEL ...
 const User = mongoose.model("User",userSchema);
 
-// const Employee = mongoose.model("Employee",userSchema);
+//Will use the find 
+User.findById("670ab84ea3948b4c20a06138")
+    .then((res)=>{
+        console.log(res);
+    })
+    .catch((err)=>{
+        console.log(err);
+    });
 
-//Now lets create the OBJECTS !!!
-const user1 = new User({
-    name : "Adam",
-    email: "adam@yahoo.com",
-    age: 48,
-});
-
-user1.save();
-
-/*
-test> db.users.find()
-[
-  {
-    _id: ObjectId('670a7f1ac4bd2602f1d63609'),
-    name: 'Adam',
-    email: 'adam@yahoo.com',
-    age: 48,
-    __v: 0
-  }
-]
-test>
-*/
